@@ -1,0 +1,638 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2005" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Inventory_ActionInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SubTime" Type="datetime" Nullable="false" />
+    <Property Name="DelFlag" Type="smallint" Nullable="false" />
+    <Property Name="ModifiedOn" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Remark" Type="nvarchar" MaxLength="256" />
+    <Property Name="Url" Type="nvarchar" MaxLength="512" Nullable="false" />
+    <Property Name="HttpMethod" Type="nvarchar" MaxLength="32" Nullable="false" />
+    <Property Name="ActionMethodName" Type="nvarchar" MaxLength="32" />
+    <Property Name="ControllerName" Type="nvarchar" MaxLength="128" />
+    <Property Name="ActionInfoName" Type="nvarchar" MaxLength="32" Nullable="false" />
+    <Property Name="Sort" Type="nvarchar(max)" />
+    <Property Name="ActionTypeEnum" Type="smallint" Nullable="false" />
+    <Property Name="MenuIcon" Type="varchar" MaxLength="512" />
+    <Property Name="IconWidth" Type="int" Nullable="false" />
+    <Property Name="IconHeight" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Inventory_BoolItem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="str" Type="nvarchar" MaxLength="150" />
+    <Property Name="BOLL_" Type="bit" />
+    <Property Name="int" Type="int" />
+    <Property Name="timener" Type="datetime" />
+    <Property Name="ItemsID" Type="int" />
+  </EntityType>
+  <EntityType Name="Inventory_BumenInfoSet">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Gushu" Type="int" Nullable="false" />
+    <Property Name="Renark" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SubTime" Type="datetime" Nullable="false" />
+    <Property Name="DelFlag" Type="smallint" Nullable="false" />
+    <Property Name="Short" Type="int" Nullable="false" />
+    <Property Name="ChangKuID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="Inventory_ChangKu">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TextName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Bak" Type="nvarchar(max)" />
+    <Property Name="Del" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Inventory_Company">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Text" Type="nvarchar" MaxLength="50" />
+    <Property Name="Del" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Inventory_Department">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DepName" Type="nvarchar" MaxLength="32" Nullable="false" />
+    <Property Name="ParentId" Type="int" Nullable="false" />
+    <Property Name="TreePath" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Level" Type="int" Nullable="false" />
+    <Property Name="IsLeaf" Type="bit" Nullable="false" />
+    <Property Name="DelFlag" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Inventory_DepartmentActionInfo">
+    <Key>
+      <PropertyRef Name="ActionInfoes_ID" />
+      <PropertyRef Name="Departments_ID" />
+    </Key>
+    <Property Name="ActionInfoes_ID" Type="int" Nullable="false" />
+    <Property Name="Departments_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Inventory_Depot">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" />
+    <Property Name="TextName" Type="nvarchar(max)" />
+    <Property Name="AddTime" Type="datetime" Nullable="false" />
+    <Property Name="NewTime" Type="datetime" Nullable="false" />
+    <Property Name="Del" Type="smallint" Nullable="false" />
+    <Property Name="Company_ID" Type="int" Nullable="false" />
+    <Property Name="GuiGe" Type="nvarchar" MaxLength="255" />
+    <Property Name="XingHao" Type="nvarchar" MaxLength="255" />
+    <Property Name="PinPai" Type="nvarchar" MaxLength="255" />
+    <Property Name="GongYingShang_ID" Type="bigint" />
+    <Property Name="Bak" Type="nvarchar(max)" />
+    <Property Name="Number" Type="nvarchar" MaxLength="255" />
+    <Property Name="DepotItems_id" Type="bigint" />
+    <Property Name="DepotCount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ChangKu_ID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="Inventory_DepotItems">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" />
+    <Property Name="Text" Type="nvarchar" MaxLength="150" />
+    <Property Name="Del" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Inventory_GongYingShang">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Number" Type="nvarchar" MaxLength="50" />
+    <Property Name="TextName" Type="nvarchar" MaxLength="255" />
+    <Property Name="Addess" Type="nvarchar" MaxLength="255" />
+    <Property Name="Photo" Type="nvarchar" MaxLength="11" />
+    <Property Name="PersonName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Bak" Type="nvarchar(max)" />
+    <Property Name="Del" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Inventory_Login_list">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" />
+    <Property Name="Userinfoid" Type="int" Nullable="false" />
+    <Property Name="LoginIP" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LoginTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Inventory_Position">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Del" Type="smallint" Nullable="false" />
+    <Property Name="Short" Type="int" />
+    <Property Name="Bak" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="Inventory_R_UserInfo_ActionInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserInfoID" Type="int" Nullable="false" />
+    <Property Name="ActionInfoID" Type="int" Nullable="false" />
+    <Property Name="IsPass" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Inventory_RoleInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleName" Type="nvarchar" MaxLength="32" Nullable="false" />
+    <Property Name="DelFlag" Type="smallint" Nullable="false" />
+    <Property Name="SubTime" Type="datetime" Nullable="false" />
+    <Property Name="Remark" Type="nvarchar" MaxLength="256" />
+    <Property Name="ModifiedOn" Type="datetime" Nullable="false" />
+    <Property Name="Sort" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Inventory_RoleInfoActionInfo">
+    <Key>
+      <PropertyRef Name="ActionInfoes_ID" />
+      <PropertyRef Name="RoleInfoes_ID" />
+    </Key>
+    <Property Name="ActionInfoes_ID" Type="int" Nullable="false" />
+    <Property Name="RoleInfoes_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Inventory_Transaction">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AddUser" Type="int" Nullable="false" />
+    <Property Name="ApplyTime" Type="datetime" Nullable="false" />
+    <Property Name="Int_Depot_ID" Type="bigint" Nullable="false" />
+    <Property Name="OutDepot_ID" Type="bigint" Nullable="false" />
+    <Property Name="Del" Type="smallint" Nullable="false" />
+    <Property Name="ToExamine" Type="smallint" />
+    <Property Name="ToExamineUserID" Type="int" />
+    <Property Name="ZhuangTai" Type="int" Nullable="false" />
+    <Property Name="BoolItems_ID" Type="bigint" Nullable="false" />
+    <Property Name="TransInt" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="Inventory_Userbak">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserInfoID" Type="int" Nullable="false" />
+    <Property Name="OldUserID" Type="int" Nullable="false" />
+    <Property Name="CardNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="Gender" Type="smallint" />
+    <Property Name="BigPhoto" Type="nvarchar" MaxLength="50" />
+    <Property Name="minPhoto" Type="nvarchar" MaxLength="50" />
+    <Property Name="Addess" Type="nvarchar" MaxLength="150" />
+    <Property Name="del" Type="bit" />
+    <Property Name="Birthday" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Inventory_UserInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UName" Type="nvarchar" MaxLength="32" />
+    <Property Name="UPwd" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="SubTime" Type="datetime" Nullable="false" />
+    <Property Name="DelFlag" Type="smallint" Nullable="false" />
+    <Property Name="ModifiedOn" Type="datetime" Nullable="false" />
+    <Property Name="Remark" Type="nvarchar" MaxLength="256" />
+    <Property Name="Sort" Type="nvarchar(max)" />
+    <Property Name="Login_now" Type="nvarchar" MaxLength="255" />
+    <Property Name="PerSonName" Type="nvarchar" MaxLength="150" />
+    <Property Name="BuMenID" Type="int" />
+    <Property Name="UserNumber" Type="nvarchar" MaxLength="20" />
+    <Property Name="DingDingNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="Position_ID" Type="int" />
+    <Property Name="Sex" Type="smallint" />
+    <Property Name="Photo" Type="nvarchar" MaxLength="11" />
+    <Property Name="Bak" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Inventory_UserInfoDepartment">
+    <Key>
+      <PropertyRef Name="Departments_ID" />
+      <PropertyRef Name="UserInfoes_ID" />
+    </Key>
+    <Property Name="Departments_ID" Type="int" Nullable="false" />
+    <Property Name="UserInfoes_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Inventory_UserInfoRoleInfo">
+    <Key>
+      <PropertyRef Name="RoleInfoes_ID" />
+      <PropertyRef Name="UserInfoes_ID" />
+    </Key>
+    <Property Name="RoleInfoes_ID" Type="int" Nullable="false" />
+    <Property Name="UserInfoes_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_ActionInfoR_UserInfo_ActionInfo">
+    <End Role="Inventory_ActionInfo" Type="Self.Inventory_ActionInfo" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Inventory_R_UserInfo_ActionInfo" Type="Self.Inventory_R_UserInfo_ActionInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Inventory_ActionInfo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Inventory_R_UserInfo_ActionInfo">
+        <PropertyRef Name="ActionInfoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bumen">
+    <End Role="Inventory_BumenInfoSet" Type="Self.Inventory_BumenInfoSet" Multiplicity="0..1" />
+    <End Role="Inventory_UserInfo" Type="Self.Inventory_UserInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Inventory_BumenInfoSet">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Inventory_UserInfo">
+        <PropertyRef Name="BuMenID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DepartmentActionInfo_ActionInfo">
+    <End Role="Inventory_ActionInfo" Type="Self.Inventory_ActionInfo" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Inventory_DepartmentActionInfo" Type="Self.Inventory_DepartmentActionInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Inventory_ActionInfo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Inventory_DepartmentActionInfo">
+        <PropertyRef Name="ActionInfoes_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DepartmentActionInfo_Department">
+    <End Role="Inventory_Department" Type="Self.Inventory_Department" Multiplicity="1" />
+    <End Role="Inventory_DepartmentActionInfo" Type="Self.Inventory_DepartmentActionInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Inventory_Department">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Inventory_DepartmentActionInfo">
+        <PropertyRef Name="Departments_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Inventory_BumenInfoSet_Inventory_ChangKu">
+    <End Role="Inventory_ChangKu" Type="Self.Inventory_ChangKu" Multiplicity="0..1" />
+    <End Role="Inventory_BumenInfoSet" Type="Self.Inventory_BumenInfoSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Inventory_ChangKu">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Inventory_BumenInfoSet">
+        <PropertyRef Name="ChangKuID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Login_list_UserInfo">
+    <End Role="Inventory_UserInfo" Type="Self.Inventory_UserInfo" Multiplicity="1" />
+    <End Role="Inventory_Login_list" Type="Self.Inventory_Login_list" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Inventory_UserInfo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Inventory_Login_list">
+        <PropertyRef Name="Userinfoid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoleInfoActionInfo_ActionInfo">
+    <End Role="Inventory_ActionInfo" Type="Self.Inventory_ActionInfo" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Inventory_RoleInfoActionInfo" Type="Self.Inventory_RoleInfoActionInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Inventory_ActionInfo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Inventory_RoleInfoActionInfo">
+        <PropertyRef Name="ActionInfoes_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoleInfoActionInfo_RoleInfo">
+    <End Role="Inventory_RoleInfo" Type="Self.Inventory_RoleInfo" Multiplicity="1" />
+    <End Role="Inventory_RoleInfoActionInfo" Type="Self.Inventory_RoleInfoActionInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Inventory_RoleInfo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Inventory_RoleInfoActionInfo">
+        <PropertyRef Name="RoleInfoes_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_Depot_T_Company">
+    <End Role="Inventory_Company" Type="Self.Inventory_Company" Multiplicity="1" />
+    <End Role="Inventory_Depot" Type="Self.Inventory_Depot" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Inventory_Company">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Inventory_Depot">
+        <PropertyRef Name="Company_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_Depot_T_DepotItems">
+    <End Role="Inventory_DepotItems" Type="Self.Inventory_DepotItems" Multiplicity="0..1" />
+    <End Role="Inventory_Depot" Type="Self.Inventory_Depot" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Inventory_DepotItems">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Inventory_Depot">
+        <PropertyRef Name="DepotItems_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_Depot_T_GongYingShang">
+    <End Role="Inventory_GongYingShang" Type="Self.Inventory_GongYingShang" Multiplicity="0..1" />
+    <End Role="Inventory_Depot" Type="Self.Inventory_Depot" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Inventory_GongYingShang">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Inventory_Depot">
+        <PropertyRef Name="GongYingShang_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_Transaction_IntT_Depot">
+    <End Role="Inventory_Depot" Type="Self.Inventory_Depot" Multiplicity="1" />
+    <End Role="Inventory_Transaction" Type="Self.Inventory_Transaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Inventory_Depot">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Inventory_Transaction">
+        <PropertyRef Name="Int_Depot_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_Transaction_OutT_Depot">
+    <End Role="Inventory_Depot" Type="Self.Inventory_Depot" Multiplicity="1" />
+    <End Role="Inventory_Transaction" Type="Self.Inventory_Transaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Inventory_Depot">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Inventory_Transaction">
+        <PropertyRef Name="OutDepot_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_Transaction_T_BoolItem">
+    <End Role="Inventory_BoolItem" Type="Self.Inventory_BoolItem" Multiplicity="1" />
+    <End Role="Inventory_Transaction" Type="Self.Inventory_Transaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Inventory_BoolItem">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Inventory_Transaction">
+        <PropertyRef Name="BoolItems_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_Transaction_UserInfo">
+    <End Role="Inventory_UserInfo" Type="Self.Inventory_UserInfo" Multiplicity="1" />
+    <End Role="Inventory_Transaction" Type="Self.Inventory_Transaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Inventory_UserInfo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Inventory_Transaction">
+        <PropertyRef Name="AddUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_Transaction_UserInfo1">
+    <End Role="Inventory_UserInfo" Type="Self.Inventory_UserInfo" Multiplicity="0..1" />
+    <End Role="Inventory_Transaction" Type="Self.Inventory_Transaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Inventory_UserInfo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Inventory_Transaction">
+        <PropertyRef Name="ToExamineUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Userbak_UserInfo">
+    <End Role="Inventory_UserInfo" Type="Self.Inventory_UserInfo" Multiplicity="1" />
+    <End Role="Inventory_Userbak" Type="Self.Inventory_Userbak" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Inventory_UserInfo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Inventory_Userbak">
+        <PropertyRef Name="UserInfoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserInfo_T_Position">
+    <End Role="Inventory_Position" Type="Self.Inventory_Position" Multiplicity="0..1" />
+    <End Role="Inventory_UserInfo" Type="Self.Inventory_UserInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Inventory_Position">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Inventory_UserInfo">
+        <PropertyRef Name="Position_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserInfoDepartment_Department">
+    <End Role="Inventory_Department" Type="Self.Inventory_Department" Multiplicity="1" />
+    <End Role="Inventory_UserInfoDepartment" Type="Self.Inventory_UserInfoDepartment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Inventory_Department">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Inventory_UserInfoDepartment">
+        <PropertyRef Name="Departments_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserInfoDepartment_UserInfo">
+    <End Role="Inventory_UserInfo" Type="Self.Inventory_UserInfo" Multiplicity="1" />
+    <End Role="Inventory_UserInfoDepartment" Type="Self.Inventory_UserInfoDepartment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Inventory_UserInfo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Inventory_UserInfoDepartment">
+        <PropertyRef Name="UserInfoes_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserInfoR_UserInfo_ActionInfo">
+    <End Role="Inventory_UserInfo" Type="Self.Inventory_UserInfo" Multiplicity="1" />
+    <End Role="Inventory_R_UserInfo_ActionInfo" Type="Self.Inventory_R_UserInfo_ActionInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Inventory_UserInfo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Inventory_R_UserInfo_ActionInfo">
+        <PropertyRef Name="UserInfoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserInfoRoleInfo_RoleInfo">
+    <End Role="Inventory_RoleInfo" Type="Self.Inventory_RoleInfo" Multiplicity="1" />
+    <End Role="Inventory_UserInfoRoleInfo" Type="Self.Inventory_UserInfoRoleInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Inventory_RoleInfo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Inventory_UserInfoRoleInfo">
+        <PropertyRef Name="RoleInfoes_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserInfoRoleInfo_UserInfo">
+    <End Role="Inventory_UserInfo" Type="Self.Inventory_UserInfo" Multiplicity="1" />
+    <End Role="Inventory_UserInfoRoleInfo" Type="Self.Inventory_UserInfoRoleInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Inventory_UserInfo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Inventory_UserInfoRoleInfo">
+        <PropertyRef Name="UserInfoes_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="Inventory_ActionInfo" EntityType="Self.Inventory_ActionInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Inventory_BoolItem" EntityType="Self.Inventory_BoolItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Inventory_BumenInfoSet" EntityType="Self.Inventory_BumenInfoSet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Inventory_ChangKu" EntityType="Self.Inventory_ChangKu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Inventory_Company" EntityType="Self.Inventory_Company" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Inventory_Department" EntityType="Self.Inventory_Department" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Inventory_DepartmentActionInfo" EntityType="Self.Inventory_DepartmentActionInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Inventory_Depot" EntityType="Self.Inventory_Depot" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Inventory_DepotItems" EntityType="Self.Inventory_DepotItems" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Inventory_GongYingShang" EntityType="Self.Inventory_GongYingShang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Inventory_Login_list" EntityType="Self.Inventory_Login_list" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Inventory_Position" EntityType="Self.Inventory_Position" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Inventory_R_UserInfo_ActionInfo" EntityType="Self.Inventory_R_UserInfo_ActionInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Inventory_RoleInfo" EntityType="Self.Inventory_RoleInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Inventory_RoleInfoActionInfo" EntityType="Self.Inventory_RoleInfoActionInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Inventory_Transaction" EntityType="Self.Inventory_Transaction" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Inventory_Userbak" EntityType="Self.Inventory_Userbak" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Inventory_UserInfo" EntityType="Self.Inventory_UserInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Inventory_UserInfoDepartment" EntityType="Self.Inventory_UserInfoDepartment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Inventory_UserInfoRoleInfo" EntityType="Self.Inventory_UserInfoRoleInfo" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_ActionInfoR_UserInfo_ActionInfo" Association="Self.FK_ActionInfoR_UserInfo_ActionInfo">
+      <End Role="Inventory_ActionInfo" EntitySet="Inventory_ActionInfo" />
+      <End Role="Inventory_R_UserInfo_ActionInfo" EntitySet="Inventory_R_UserInfo_ActionInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bumen" Association="Self.FK_Bumen">
+      <End Role="Inventory_BumenInfoSet" EntitySet="Inventory_BumenInfoSet" />
+      <End Role="Inventory_UserInfo" EntitySet="Inventory_UserInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DepartmentActionInfo_ActionInfo" Association="Self.FK_DepartmentActionInfo_ActionInfo">
+      <End Role="Inventory_ActionInfo" EntitySet="Inventory_ActionInfo" />
+      <End Role="Inventory_DepartmentActionInfo" EntitySet="Inventory_DepartmentActionInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DepartmentActionInfo_Department" Association="Self.FK_DepartmentActionInfo_Department">
+      <End Role="Inventory_Department" EntitySet="Inventory_Department" />
+      <End Role="Inventory_DepartmentActionInfo" EntitySet="Inventory_DepartmentActionInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Inventory_BumenInfoSet_Inventory_ChangKu" Association="Self.FK_Inventory_BumenInfoSet_Inventory_ChangKu">
+      <End Role="Inventory_ChangKu" EntitySet="Inventory_ChangKu" />
+      <End Role="Inventory_BumenInfoSet" EntitySet="Inventory_BumenInfoSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Login_list_UserInfo" Association="Self.FK_Login_list_UserInfo">
+      <End Role="Inventory_UserInfo" EntitySet="Inventory_UserInfo" />
+      <End Role="Inventory_Login_list" EntitySet="Inventory_Login_list" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoleInfoActionInfo_ActionInfo" Association="Self.FK_RoleInfoActionInfo_ActionInfo">
+      <End Role="Inventory_ActionInfo" EntitySet="Inventory_ActionInfo" />
+      <End Role="Inventory_RoleInfoActionInfo" EntitySet="Inventory_RoleInfoActionInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoleInfoActionInfo_RoleInfo" Association="Self.FK_RoleInfoActionInfo_RoleInfo">
+      <End Role="Inventory_RoleInfo" EntitySet="Inventory_RoleInfo" />
+      <End Role="Inventory_RoleInfoActionInfo" EntitySet="Inventory_RoleInfoActionInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_Depot_T_Company" Association="Self.FK_T_Depot_T_Company">
+      <End Role="Inventory_Company" EntitySet="Inventory_Company" />
+      <End Role="Inventory_Depot" EntitySet="Inventory_Depot" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_Depot_T_DepotItems" Association="Self.FK_T_Depot_T_DepotItems">
+      <End Role="Inventory_DepotItems" EntitySet="Inventory_DepotItems" />
+      <End Role="Inventory_Depot" EntitySet="Inventory_Depot" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_Depot_T_GongYingShang" Association="Self.FK_T_Depot_T_GongYingShang">
+      <End Role="Inventory_GongYingShang" EntitySet="Inventory_GongYingShang" />
+      <End Role="Inventory_Depot" EntitySet="Inventory_Depot" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_Transaction_IntT_Depot" Association="Self.FK_T_Transaction_IntT_Depot">
+      <End Role="Inventory_Depot" EntitySet="Inventory_Depot" />
+      <End Role="Inventory_Transaction" EntitySet="Inventory_Transaction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_Transaction_OutT_Depot" Association="Self.FK_T_Transaction_OutT_Depot">
+      <End Role="Inventory_Depot" EntitySet="Inventory_Depot" />
+      <End Role="Inventory_Transaction" EntitySet="Inventory_Transaction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_Transaction_T_BoolItem" Association="Self.FK_T_Transaction_T_BoolItem">
+      <End Role="Inventory_BoolItem" EntitySet="Inventory_BoolItem" />
+      <End Role="Inventory_Transaction" EntitySet="Inventory_Transaction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_Transaction_UserInfo" Association="Self.FK_T_Transaction_UserInfo">
+      <End Role="Inventory_UserInfo" EntitySet="Inventory_UserInfo" />
+      <End Role="Inventory_Transaction" EntitySet="Inventory_Transaction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_Transaction_UserInfo1" Association="Self.FK_T_Transaction_UserInfo1">
+      <End Role="Inventory_UserInfo" EntitySet="Inventory_UserInfo" />
+      <End Role="Inventory_Transaction" EntitySet="Inventory_Transaction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Userbak_UserInfo" Association="Self.FK_Userbak_UserInfo">
+      <End Role="Inventory_UserInfo" EntitySet="Inventory_UserInfo" />
+      <End Role="Inventory_Userbak" EntitySet="Inventory_Userbak" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserInfo_T_Position" Association="Self.FK_UserInfo_T_Position">
+      <End Role="Inventory_Position" EntitySet="Inventory_Position" />
+      <End Role="Inventory_UserInfo" EntitySet="Inventory_UserInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserInfoDepartment_Department" Association="Self.FK_UserInfoDepartment_Department">
+      <End Role="Inventory_Department" EntitySet="Inventory_Department" />
+      <End Role="Inventory_UserInfoDepartment" EntitySet="Inventory_UserInfoDepartment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserInfoDepartment_UserInfo" Association="Self.FK_UserInfoDepartment_UserInfo">
+      <End Role="Inventory_UserInfo" EntitySet="Inventory_UserInfo" />
+      <End Role="Inventory_UserInfoDepartment" EntitySet="Inventory_UserInfoDepartment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserInfoR_UserInfo_ActionInfo" Association="Self.FK_UserInfoR_UserInfo_ActionInfo">
+      <End Role="Inventory_UserInfo" EntitySet="Inventory_UserInfo" />
+      <End Role="Inventory_R_UserInfo_ActionInfo" EntitySet="Inventory_R_UserInfo_ActionInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserInfoRoleInfo_RoleInfo" Association="Self.FK_UserInfoRoleInfo_RoleInfo">
+      <End Role="Inventory_RoleInfo" EntitySet="Inventory_RoleInfo" />
+      <End Role="Inventory_UserInfoRoleInfo" EntitySet="Inventory_UserInfoRoleInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserInfoRoleInfo_UserInfo" Association="Self.FK_UserInfoRoleInfo_UserInfo">
+      <End Role="Inventory_UserInfo" EntitySet="Inventory_UserInfo" />
+      <End Role="Inventory_UserInfoRoleInfo" EntitySet="Inventory_UserInfoRoleInfo" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

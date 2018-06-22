@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net">
+  <object type="Inventory.BLL.Inventory_UserInfoService, Inventory.BLL" singleton="false" name="UserInfoService" >
+  </object>
+
+  <object type="Inventory.BLL.Inventory_RoleInfoService, Inventory.BLL" singleton="false" name="RoleInfoService" >
+  </object>
+  <object type="Inventory.BLL.Inventory_ActionInfoService, Inventory.BLL" singleton="false" name="ActionInfoService" >
+  </object>
+  <object type="Inventory.BLL.Inventory_DepartmentService, Inventory.BLL" singleton="false" name="DepartmentService" >
+  </object>
+  <object type="Inventory.BLL.Inventory_BumenInfoSetService, Inventory.BLL" singleton="false" name="BumenInfoSetService" >
+  </object>
+
+  <object type="Inventory.BLL.Inventory_BoolItemService, Inventory.BLL" singleton="false" name="BoolItemService" >
+  </object>
+  <object type="Inventory.BLL.Inventory_PositionService, Inventory.BLL" singleton="false" name="PositionService" >
+  </object>
+  <object type="Inventory.BLL.Inventory_DepotService, Inventory.BLL" singleton="false" name="DepotService" >
+  </object>
+  <object type="Inventory.BLL.Inventory_ChangKuService, Inventory.BLL" singleton="false" name="ChangKuService" >
+  </object>
+  <object type="Inventory.BLL.Inventory_CompanyService, Inventory.BLL" singleton="false" name="CompanyService" >
+  </object>
+</objects>
+

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a2d087ff886a4807ac7727d0af15f04a" Name="Diagram1" ZoomLevel="78">
+        <EntityTypeShape EntityType="Model.Inventory_ActionInfo" Width="1.5" PointX="0.75" PointY="14" />
+        <EntityTypeShape EntityType="Model.Inventory_BoolItem" Width="1.5" PointX="11.25" PointY="10.875" />
+        <EntityTypeShape EntityType="Model.Inventory_BumenInfoSet" Width="1.5" PointX="6" PointY="18.875" />
+        <EntityTypeShape EntityType="Model.Inventory_ChangKu" Width="1.5" PointX="9" PointY="30.5" />
+        <EntityTypeShape EntityType="Model.Inventory_Company" Width="1.5" PointX="9" PointY="35.75" />
+        <EntityTypeShape EntityType="Model.Inventory_Department" Width="1.5" PointX="3" PointY="19.5" />
+        <EntityTypeShape EntityType="Model.Inventory_Depot" Width="1.5" PointX="11.25" PointY="29.75" />
+        <EntityTypeShape EntityType="Model.Inventory_DepotItems" Width="1.5" PointX="9" PointY="33.125" />
+        <EntityTypeShape EntityType="Model.Inventory_GongYingShang" Width="1.5" PointX="9" PointY="27" />
+        <EntityTypeShape EntityType="Model.Inventory_Login_list" Width="1.5" PointX="10.5" PointY="14.75" />
+        <EntityTypeShape EntityType="Model.Inventory_Position" Width="1.5" PointX="6" PointY="11.875" />
+        <EntityTypeShape EntityType="Model.Inventory_R_UserInfo_ActionInfo" Width="1.5" PointX="6" PointY="15.125" />
+        <EntityTypeShape EntityType="Model.Inventory_RoleInfo" Width="1.5" PointX="3" PointY="13.125" />
+        <EntityTypeShape EntityType="Model.Inventory_Transaction" Width="1.5" PointX="13.5" PointY="15.625" />
+        <EntityTypeShape EntityType="Model.Inventory_Userbak" Width="1.5" PointX="10.5" PointY="22.25" />
+        <EntityTypeShape EntityType="Model.Inventory_UserInfo" Width="1.5" PointX="8.25" PointY="14.625" />
+        <AssociationConnector Association="Model.FK_ActionInfoR_UserInfo_ActionInfo" />
+        <AssociationConnector Association="Model.FK_T_Transaction_T_BoolItem" />
+        <AssociationConnector Association="Model.FK_Bumen" />
+        <AssociationConnector Association="Model.FK_T_Depot_T_ChangKu" />
+        <AssociationConnector Association="Model.FK_T_Depot_T_Company" />
+        <AssociationConnector Association="Model.FK_T_Depot_T_DepotItems" />
+        <AssociationConnector Association="Model.FK_T_Depot_T_GongYingShang" />
+        <AssociationConnector Association="Model.FK_T_Transaction_IntT_Depot" />
+        <AssociationConnector Association="Model.FK_T_Transaction_OutT_Depot" />
+        <AssociationConnector Association="Model.FK_Login_list_UserInfo" />
+        <AssociationConnector Association="Model.FK_UserInfo_T_Position" />
+        <AssociationConnector Association="Model.FK_UserInfoR_UserInfo_ActionInfo" />
+        <AssociationConnector Association="Model.FK_T_Transaction_UserInfo" />
+        <AssociationConnector Association="Model.FK_T_Transaction_UserInfo1" />
+        <AssociationConnector Association="Model.FK_Userbak_UserInfo" />
+        <AssociationConnector Association="Model.Inventory_DepartmentActionInfo" />
+        <AssociationConnector Association="Model.Inventory_RoleInfoActionInfo" />
+        <AssociationConnector Association="Model.Inventory_UserInfoDepartment" />
+        <AssociationConnector Association="Model.Inventory_UserInfoRoleInfo" />
+        <AssociationConnector Association="Model.FK_Inventory_BumenInfoSet_Inventory_ChangKu" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

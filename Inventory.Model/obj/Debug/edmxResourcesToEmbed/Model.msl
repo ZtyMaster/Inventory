@@ -1,0 +1,260 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="Inventory_ActionInfo">
+      <EntityTypeMapping TypeName="Model.Inventory_ActionInfo">
+        <MappingFragment StoreEntitySet="Inventory_ActionInfo">
+          <ScalarProperty Name="IconHeight" ColumnName="IconHeight" />
+          <ScalarProperty Name="IconWidth" ColumnName="IconWidth" />
+          <ScalarProperty Name="MenuIcon" ColumnName="MenuIcon" />
+          <ScalarProperty Name="ActionTypeEnum" ColumnName="ActionTypeEnum" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="ActionInfoName" ColumnName="ActionInfoName" />
+          <ScalarProperty Name="ControllerName" ColumnName="ControllerName" />
+          <ScalarProperty Name="ActionMethodName" ColumnName="ActionMethodName" />
+          <ScalarProperty Name="HttpMethod" ColumnName="HttpMethod" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Inventory_BoolItem">
+      <EntityTypeMapping TypeName="Model.Inventory_BoolItem">
+        <MappingFragment StoreEntitySet="Inventory_BoolItem">
+          <ScalarProperty Name="ItemsID" ColumnName="ItemsID" />
+          <ScalarProperty Name="timener" ColumnName="timener" />
+          <ScalarProperty Name="int" ColumnName="int" />
+          <ScalarProperty Name="BOLL_" ColumnName="BOLL_" />
+          <ScalarProperty Name="str" ColumnName="str" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Inventory_BumenInfoSet">
+      <EntityTypeMapping TypeName="Model.Inventory_BumenInfoSet">
+        <MappingFragment StoreEntitySet="Inventory_BumenInfoSet">
+          <ScalarProperty Name="ChangKuID" ColumnName="ChangKuID" />
+          <ScalarProperty Name="Short" ColumnName="Short" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
+          <ScalarProperty Name="Renark" ColumnName="Renark" />
+          <ScalarProperty Name="Gushu" ColumnName="Gushu" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Inventory_ChangKu">
+      <EntityTypeMapping TypeName="Model.Inventory_ChangKu">
+        <MappingFragment StoreEntitySet="Inventory_ChangKu">
+          <ScalarProperty Name="Del" ColumnName="Del" />
+          <ScalarProperty Name="Bak" ColumnName="Bak" />
+          <ScalarProperty Name="TextName" ColumnName="TextName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Inventory_Company">
+      <EntityTypeMapping TypeName="Model.Inventory_Company">
+        <MappingFragment StoreEntitySet="Inventory_Company">
+          <ScalarProperty Name="Del" ColumnName="Del" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Inventory_Department">
+      <EntityTypeMapping TypeName="Model.Inventory_Department">
+        <MappingFragment StoreEntitySet="Inventory_Department">
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="IsLeaf" ColumnName="IsLeaf" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="TreePath" ColumnName="TreePath" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="DepName" ColumnName="DepName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Inventory_Depot">
+      <EntityTypeMapping TypeName="Model.Inventory_Depot">
+        <MappingFragment StoreEntitySet="Inventory_Depot">
+          <ScalarProperty Name="ChangKu_ID" ColumnName="ChangKu_ID" />
+          <ScalarProperty Name="DepotCount" ColumnName="DepotCount" />
+          <ScalarProperty Name="DepotItems_id" ColumnName="DepotItems_id" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="Bak" ColumnName="Bak" />
+          <ScalarProperty Name="GongYingShang_ID" ColumnName="GongYingShang_ID" />
+          <ScalarProperty Name="PinPai" ColumnName="PinPai" />
+          <ScalarProperty Name="XingHao" ColumnName="XingHao" />
+          <ScalarProperty Name="GuiGe" ColumnName="GuiGe" />
+          <ScalarProperty Name="Company_ID" ColumnName="Company_ID" />
+          <ScalarProperty Name="Del" ColumnName="Del" />
+          <ScalarProperty Name="NewTime" ColumnName="NewTime" />
+          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+          <ScalarProperty Name="TextName" ColumnName="TextName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Inventory_DepotItems">
+      <EntityTypeMapping TypeName="Model.Inventory_DepotItems">
+        <MappingFragment StoreEntitySet="Inventory_DepotItems">
+          <ScalarProperty Name="Del" ColumnName="Del" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Inventory_GongYingShang">
+      <EntityTypeMapping TypeName="Model.Inventory_GongYingShang">
+        <MappingFragment StoreEntitySet="Inventory_GongYingShang">
+          <ScalarProperty Name="Del" ColumnName="Del" />
+          <ScalarProperty Name="Bak" ColumnName="Bak" />
+          <ScalarProperty Name="PersonName" ColumnName="PersonName" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Addess" ColumnName="Addess" />
+          <ScalarProperty Name="TextName" ColumnName="TextName" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Inventory_Login_list">
+      <EntityTypeMapping TypeName="Model.Inventory_Login_list">
+        <MappingFragment StoreEntitySet="Inventory_Login_list">
+          <ScalarProperty Name="LoginTime" ColumnName="LoginTime" />
+          <ScalarProperty Name="LoginIP" ColumnName="LoginIP" />
+          <ScalarProperty Name="Userinfoid" ColumnName="Userinfoid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Inventory_Position">
+      <EntityTypeMapping TypeName="Model.Inventory_Position">
+        <MappingFragment StoreEntitySet="Inventory_Position">
+          <ScalarProperty Name="Bak" ColumnName="Bak" />
+          <ScalarProperty Name="Short" ColumnName="Short" />
+          <ScalarProperty Name="Del" ColumnName="Del" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Inventory_R_UserInfo_ActionInfo">
+      <EntityTypeMapping TypeName="Model.Inventory_R_UserInfo_ActionInfo">
+        <MappingFragment StoreEntitySet="Inventory_R_UserInfo_ActionInfo">
+          <ScalarProperty Name="IsPass" ColumnName="IsPass" />
+          <ScalarProperty Name="ActionInfoID" ColumnName="ActionInfoID" />
+          <ScalarProperty Name="UserInfoID" ColumnName="UserInfoID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Inventory_RoleInfo">
+      <EntityTypeMapping TypeName="Model.Inventory_RoleInfo">
+        <MappingFragment StoreEntitySet="Inventory_RoleInfo">
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Inventory_Transaction">
+      <EntityTypeMapping TypeName="Model.Inventory_Transaction">
+        <MappingFragment StoreEntitySet="Inventory_Transaction">
+          <ScalarProperty Name="TransInt" ColumnName="TransInt" />
+          <ScalarProperty Name="BoolItems_ID" ColumnName="BoolItems_ID" />
+          <ScalarProperty Name="ZhuangTai" ColumnName="ZhuangTai" />
+          <ScalarProperty Name="ToExamineUserID" ColumnName="ToExamineUserID" />
+          <ScalarProperty Name="ToExamine" ColumnName="ToExamine" />
+          <ScalarProperty Name="Del" ColumnName="Del" />
+          <ScalarProperty Name="OutDepot_ID" ColumnName="OutDepot_ID" />
+          <ScalarProperty Name="Int_Depot_ID" ColumnName="Int_Depot_ID" />
+          <ScalarProperty Name="ApplyTime" ColumnName="ApplyTime" />
+          <ScalarProperty Name="AddUser" ColumnName="AddUser" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Inventory_Userbak">
+      <EntityTypeMapping TypeName="Model.Inventory_Userbak">
+        <MappingFragment StoreEntitySet="Inventory_Userbak">
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="del" ColumnName="del" />
+          <ScalarProperty Name="Addess" ColumnName="Addess" />
+          <ScalarProperty Name="minPhoto" ColumnName="minPhoto" />
+          <ScalarProperty Name="BigPhoto" ColumnName="BigPhoto" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="CardNumber" ColumnName="CardNumber" />
+          <ScalarProperty Name="OldUserID" ColumnName="OldUserID" />
+          <ScalarProperty Name="UserInfoID" ColumnName="UserInfoID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Inventory_UserInfo">
+      <EntityTypeMapping TypeName="Model.Inventory_UserInfo">
+        <MappingFragment StoreEntitySet="Inventory_UserInfo">
+          <ScalarProperty Name="Bak" ColumnName="Bak" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="Position_ID" ColumnName="Position_ID" />
+          <ScalarProperty Name="DingDingNumber" ColumnName="DingDingNumber" />
+          <ScalarProperty Name="UserNumber" ColumnName="UserNumber" />
+          <ScalarProperty Name="BuMenID" ColumnName="BuMenID" />
+          <ScalarProperty Name="PerSonName" ColumnName="PerSonName" />
+          <ScalarProperty Name="Login_now" ColumnName="Login_now" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
+          <ScalarProperty Name="UPwd" ColumnName="UPwd" />
+          <ScalarProperty Name="UName" ColumnName="UName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Inventory_DepartmentActionInfo" TypeName="Model.Inventory_DepartmentActionInfo" StoreEntitySet="Inventory_DepartmentActionInfo">
+      <EndProperty Name="Inventory_Department">
+        <ScalarProperty Name="ID" ColumnName="Departments_ID" />
+      </EndProperty>
+      <EndProperty Name="Inventory_ActionInfo">
+        <ScalarProperty Name="ID" ColumnName="ActionInfoes_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Inventory_RoleInfoActionInfo" TypeName="Model.Inventory_RoleInfoActionInfo" StoreEntitySet="Inventory_RoleInfoActionInfo">
+      <EndProperty Name="Inventory_RoleInfo">
+        <ScalarProperty Name="ID" ColumnName="RoleInfoes_ID" />
+      </EndProperty>
+      <EndProperty Name="Inventory_ActionInfo">
+        <ScalarProperty Name="ID" ColumnName="ActionInfoes_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Inventory_UserInfoDepartment" TypeName="Model.Inventory_UserInfoDepartment" StoreEntitySet="Inventory_UserInfoDepartment">
+      <EndProperty Name="Inventory_UserInfo">
+        <ScalarProperty Name="ID" ColumnName="UserInfoes_ID" />
+      </EndProperty>
+      <EndProperty Name="Inventory_Department">
+        <ScalarProperty Name="ID" ColumnName="Departments_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Inventory_UserInfoRoleInfo" TypeName="Model.Inventory_UserInfoRoleInfo" StoreEntitySet="Inventory_UserInfoRoleInfo">
+      <EndProperty Name="Inventory_UserInfo">
+        <ScalarProperty Name="ID" ColumnName="UserInfoes_ID" />
+      </EndProperty>
+      <EndProperty Name="Inventory_RoleInfo">
+        <ScalarProperty Name="ID" ColumnName="RoleInfoes_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

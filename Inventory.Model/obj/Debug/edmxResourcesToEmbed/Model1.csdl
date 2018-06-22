@@ -1,0 +1,356 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OAModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="OAEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="ActionInfo" EntityType="OAModel.ActionInfo" />
+    <EntitySet Name="Department" EntityType="OAModel.Department" />
+    <EntitySet Name="R_UserInfo_ActionInfo" EntityType="OAModel.R_UserInfo_ActionInfo" />
+    <EntitySet Name="RoleInfo" EntityType="OAModel.RoleInfo" />
+    <AssociationSet Name="FK_ActionInfoR_UserInfo_ActionInfo" Association="OAModel.FK_ActionInfoR_UserInfo_ActionInfo">
+      <End Role="ActionInfo" EntitySet="ActionInfo" />
+      <End Role="R_UserInfo_ActionInfo" EntitySet="R_UserInfo_ActionInfo" />
+    </AssociationSet>
+    <AssociationSet Name="DepartmentActionInfo" Association="OAModel.DepartmentActionInfo">
+      <End Role="ActionInfo" EntitySet="ActionInfo" />
+      <End Role="Department" EntitySet="Department" />
+    </AssociationSet>
+    <AssociationSet Name="RoleInfoActionInfo" Association="OAModel.RoleInfoActionInfo">
+      <End Role="ActionInfo" EntitySet="ActionInfo" />
+      <End Role="RoleInfo" EntitySet="RoleInfo" />
+    </AssociationSet>
+    <EntitySet Name="BumenInfoSet" EntityType="OAModel.BumenInfoSet" />
+    <EntitySet Name="Login_list" EntityType="OAModel.Login_list" />
+    <EntitySet Name="UserInfoes" EntityType="OAModel.UserInfo" />
+    <AssociationSet Name="FK_Bumen" Association="OAModel.FK_Bumen">
+      <End Role="BumenInfoSet" EntitySet="BumenInfoSet" />
+      <End Role="UserInfo" EntitySet="UserInfoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Login_list_UserInfo" Association="OAModel.FK_Login_list_UserInfo">
+      <End Role="UserInfo" EntitySet="UserInfoes" />
+      <End Role="Login_list" EntitySet="Login_list" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserInfoR_UserInfo_ActionInfo" Association="OAModel.FK_UserInfoR_UserInfo_ActionInfo">
+      <End Role="UserInfo" EntitySet="UserInfoes" />
+      <End Role="R_UserInfo_ActionInfo" EntitySet="R_UserInfo_ActionInfo" />
+    </AssociationSet>
+    <AssociationSet Name="UserInfoDepartment" Association="OAModel.UserInfoDepartment">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="UserInfo" EntitySet="UserInfoes" />
+    </AssociationSet>
+    <AssociationSet Name="UserInfoRoleInfo" Association="OAModel.UserInfoRoleInfo">
+      <End Role="RoleInfo" EntitySet="RoleInfo" />
+      <End Role="UserInfo" EntitySet="UserInfoes" />
+    </AssociationSet>
+    <EntitySet Name="T_BoolItem" EntityType="OAModel.T_BoolItem" />
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(OAModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(OAModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <EntitySet Name="Userbaks" EntityType="OAModel.Userbak" />
+    <AssociationSet Name="FK_Userbak_UserInfo" Association="OAModel.FK_Userbak_UserInfo">
+      <End Role="UserInfo" EntitySet="UserInfoes" />
+      <End Role="Userbak" EntitySet="Userbaks" />
+    </AssociationSet>
+    <EntitySet Name="WXX_FormID" EntityType="OAModel.WXX_FormID" />
+    <EntitySet Name="WXXUserInfoes" EntityType="OAModel.WXXUserInfo" />
+    <AssociationSet Name="FK_WXXUserInfo_UserInfo" Association="OAModel.FK_WXXUserInfo_UserInfo">
+      <End Role="UserInfo" EntitySet="UserInfoes" />
+      <End Role="WXXUserInfo" EntitySet="WXXUserInfoes" />
+    </AssociationSet>
+    <EntitySet Name="WXXMenuInfoes" EntityType="OAModel.WXXMenuInfo" />
+  </EntityContainer>
+  <EntityType Name="ActionInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="SubTime" Nullable="false" Precision="3" />
+    <Property Type="Int16" Name="DelFlag" Nullable="false" />
+    <Property Type="String" Name="ModifiedOn" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Remark" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Url" Nullable="false" MaxLength="512" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="HttpMethod" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ActionMethodName" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ControllerName" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ActionInfoName" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Sort" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int16" Name="ActionTypeEnum" Nullable="false" />
+    <Property Type="String" Name="MenuIcon" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="IconWidth" Nullable="false" />
+    <Property Type="Int32" Name="IconHeight" Nullable="false" />
+    <NavigationProperty Name="R_UserInfo_ActionInfo" Relationship="OAModel.FK_ActionInfoR_UserInfo_ActionInfo" FromRole="ActionInfo" ToRole="R_UserInfo_ActionInfo" />
+    <NavigationProperty Name="Department" Relationship="OAModel.DepartmentActionInfo" FromRole="ActionInfo" ToRole="Department" />
+    <NavigationProperty Name="RoleInfo" Relationship="OAModel.RoleInfoActionInfo" FromRole="ActionInfo" ToRole="RoleInfo" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="DepName" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="ParentId" Nullable="false" />
+    <Property Type="String" Name="TreePath" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Level" Nullable="false" />
+    <Property Type="Boolean" Name="IsLeaf" Nullable="false" />
+    <NavigationProperty Name="ActionInfo" Relationship="OAModel.DepartmentActionInfo" FromRole="Department" ToRole="ActionInfo" />
+    <Property Name="DelFlag" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="UserInfoes" Relationship="OAModel.UserInfoDepartment" FromRole="Department" ToRole="UserInfo" />
+  </EntityType>
+  <EntityType Name="R_UserInfo_ActionInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="UserInfoID" Nullable="false" />
+    <Property Type="Int32" Name="ActionInfoID" Nullable="false" />
+    <Property Type="Boolean" Name="IsPass" Nullable="false" />
+    <NavigationProperty Name="ActionInfo" Relationship="OAModel.FK_ActionInfoR_UserInfo_ActionInfo" FromRole="R_UserInfo_ActionInfo" ToRole="ActionInfo" />
+    <NavigationProperty Name="UserInfo" Relationship="OAModel.FK_UserInfoR_UserInfo_ActionInfo" FromRole="R_UserInfo_ActionInfo" ToRole="UserInfo" />
+  </EntityType>
+  <EntityType Name="RoleInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="RoleName" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Type="Int16" Name="DelFlag" Nullable="false" />
+    <Property Type="DateTime" Name="SubTime" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Remark" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="ModifiedOn" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Sort" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ActionInfo" Relationship="OAModel.RoleInfoActionInfo" FromRole="RoleInfo" ToRole="ActionInfo" />
+    <NavigationProperty Name="UserInfoes" Relationship="OAModel.UserInfoRoleInfo" FromRole="RoleInfo" ToRole="UserInfo" />
+  </EntityType>
+  <Association Name="FK_ActionInfoR_UserInfo_ActionInfo">
+    <End Type="OAModel.ActionInfo" Role="ActionInfo" Multiplicity="1" />
+    <End Type="OAModel.R_UserInfo_ActionInfo" Role="R_UserInfo_ActionInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ActionInfo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="R_UserInfo_ActionInfo">
+        <PropertyRef Name="ActionInfoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DepartmentActionInfo">
+    <End Type="OAModel.ActionInfo" Role="ActionInfo" Multiplicity="*" />
+    <End Type="OAModel.Department" Role="Department" Multiplicity="*" />
+  </Association>
+  <Association Name="RoleInfoActionInfo">
+    <End Type="OAModel.ActionInfo" Role="ActionInfo" Multiplicity="*" />
+    <End Type="OAModel.RoleInfo" Role="RoleInfo" Multiplicity="*" />
+  </Association>
+  <EntityType Name="BumenInfoSet">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Gushu" Type="Int32" Nullable="false" />
+    <Property Name="Renark" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SubTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DelFlag" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="UserInfoes" Relationship="OAModel.FK_Bumen" FromRole="BumenInfoSet" ToRole="UserInfo" />
+  </EntityType>
+  <EntityType Name="Login_list">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="Userinfoid" Type="Int32" Nullable="false" />
+    <Property Name="LoginIP" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LoginTime" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="UserInfo" Relationship="OAModel.FK_Login_list_UserInfo" FromRole="Login_list" ToRole="UserInfo" />
+  </EntityType>
+  <EntityType Name="UserInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UName" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="UPwd" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SubTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DelFlag" Type="Int16" Nullable="false" />
+    <Property Name="ModifiedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Remark" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Sort" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="OverTime" Type="DateTime" Precision="3" />
+    <Property Name="UserXiaoHao" Type="Int32" />
+    <Property Name="Click" Type="Int32" />
+    <Property Name="ThisMastr" Type="Boolean" />
+    <Property Name="MasterID" Type="Int32" />
+    <Property Name="Login_now" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CityID" Type="Int32" />
+    <Property Name="Umoney" Type="Decimal" Precision="18" Scale="3" />
+    <Property Name="PerSonName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="QuXian" Type="Int32" />
+    <Property Name="BuMenID" Type="Int32" />
+    <NavigationProperty Name="BumenInfoSet" Relationship="OAModel.FK_Bumen" FromRole="UserInfo" ToRole="BumenInfoSet" />
+    <NavigationProperty Name="Login_list" Relationship="OAModel.FK_Login_list_UserInfo" FromRole="UserInfo" ToRole="Login_list" />
+    <NavigationProperty Name="R_UserInfo_ActionInfo" Relationship="OAModel.FK_UserInfoR_UserInfo_ActionInfo" FromRole="UserInfo" ToRole="R_UserInfo_ActionInfo" />
+    <NavigationProperty Name="Departments" Relationship="OAModel.UserInfoDepartment" FromRole="UserInfo" ToRole="Department" />
+    <NavigationProperty Name="RoleInfoes" Relationship="OAModel.UserInfoRoleInfo" FromRole="UserInfo" ToRole="RoleInfo" />
+    <NavigationProperty Name="Userbaks" Relationship="OAModel.FK_Userbak_UserInfo" FromRole="UserInfo" ToRole="Userbak" />
+    <NavigationProperty Name="WXXUserInfoes" Relationship="OAModel.FK_WXXUserInfo_UserInfo" FromRole="UserInfo" ToRole="WXXUserInfo" />
+  </EntityType>
+  <Association Name="FK_Bumen">
+    <End Type="OAModel.BumenInfoSet" Role="BumenInfoSet" Multiplicity="0..1" />
+    <End Type="OAModel.UserInfo" Role="UserInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BumenInfoSet">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UserInfo">
+        <PropertyRef Name="BuMenID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Login_list_UserInfo">
+    <End Type="OAModel.UserInfo" Role="UserInfo" Multiplicity="1" />
+    <End Type="OAModel.Login_list" Role="Login_list" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Login_list">
+        <PropertyRef Name="Userinfoid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserInfoR_UserInfo_ActionInfo">
+    <End Type="OAModel.UserInfo" Role="UserInfo" Multiplicity="1" />
+    <End Type="OAModel.R_UserInfo_ActionInfo" Role="R_UserInfo_ActionInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="R_UserInfo_ActionInfo">
+        <PropertyRef Name="UserInfoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserInfoDepartment">
+    <End Type="OAModel.Department" Role="Department" Multiplicity="*" />
+    <End Type="OAModel.UserInfo" Role="UserInfo" Multiplicity="*" />
+  </Association>
+  <Association Name="UserInfoRoleInfo">
+    <End Type="OAModel.RoleInfo" Role="RoleInfo" Multiplicity="*" />
+    <End Type="OAModel.UserInfo" Role="UserInfo" Multiplicity="*" />
+  </Association>
+  <EntityType Name="T_BoolItem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="str" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="BOLL_" Type="Boolean" />
+    <Property Name="int" Type="Int32" />
+    <Property Name="timener" Type="DateTime" Precision="3" />
+    <Property Name="ItemsID" Type="Int32" />
+  </EntityType>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="Userbak">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserInfoID" Type="Int32" Nullable="false" />
+    <Property Name="OldUserID" Type="Int32" Nullable="false" />
+    <Property Name="CardNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="Int16" />
+    <Property Name="BigPhoto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="minPhoto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Addess" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="del" Type="Boolean" />
+    <Property Name="Birthday" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="UserInfo" Relationship="OAModel.FK_Userbak_UserInfo" FromRole="Userbak" ToRole="UserInfo" />
+  </EntityType>
+  <Association Name="FK_Userbak_UserInfo">
+    <End Type="OAModel.UserInfo" Role="UserInfo" Multiplicity="1" />
+    <End Type="OAModel.Userbak" Role="Userbak" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Userbak">
+        <PropertyRef Name="UserInfoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="WXX_FormID">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FormID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AddUserID" Type="Int32" Nullable="false" />
+    <Property Name="AddTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="StopTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CanUse" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WXXUserInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UID" Type="Int32" Nullable="false" />
+    <Property Name="WXID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="UserInfo" Relationship="OAModel.FK_WXXUserInfo_UserInfo" FromRole="WXXUserInfo" ToRole="UserInfo" />
+  </EntityType>
+  <Association Name="FK_WXXUserInfo_UserInfo">
+    <End Type="OAModel.UserInfo" Role="UserInfo" Multiplicity="1" />
+    <End Type="OAModel.WXXUserInfo" Role="WXXUserInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="WXXUserInfo">
+        <PropertyRef Name="UID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="WXXMenuInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EngName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>
